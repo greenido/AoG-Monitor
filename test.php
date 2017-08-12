@@ -5,7 +5,10 @@
  @author Ido Green | @greenido
  @date 8/2017
 
- @see https://github.com/KnpLabs/php-github-api/blob/master/doc/issues.md
+ @see 
+ 1. https://github.com/KnpLabs/php-github-api/blob/master/doc/issues.md
+ 2. https://developer.github.com/v3/issues/#list-issues
+ 
 */
 
 require_once 'vendor/autoload.php';
