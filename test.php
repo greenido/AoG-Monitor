@@ -22,16 +22,22 @@ function printIssues($repo, $client) {
   $twoDaysAgoTime = strtotime("-2 days");
   $twoDaysAgoStr = date('Y-m-d', $twoDaysAgoTime);
 
-  echo "\n\nIssues on $repo from $twoDaysAgoStr\n";
-  echo "==========================================================\n\n";
+  $output =  "\nIssues on $repo from $twoDaysAgoStr\n";
+  $output .= "==========================================================\n\n";
   $issues = $client->api('issue')->all('actions-on-google', $repo, array('state' => 'open'));
   $i = 1;
   foreach ($issues as $key => $issue) {
     $tmpDate = substr($issue['created_at'], 0, 10);
     if (strtotime($tmpDate) > $twoDaysAgoTime) {
-      echo $i . ") [" . $tmpDate . "] " . ($issue['title'] . " - " . $issue['url'] .  "\n");
+      $output .= $i . ") [" . $tmpDate . "] " . ($issue['title'] . " - " . $issue['url'] .  "\n");
       $i++;
     }
+  }
+  if ($i >1 ) {
+    echo $output;
+  }
+  else {
+    echo "\n(!) No new issues for $repo\n";
   }
 }
 
