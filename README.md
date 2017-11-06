@@ -22,3 +22,6 @@ $ php composer.phar require knplabs/github-api php-http/guzzle6-adapter
 ```
 
 #### Be strong!
+
+
+[![Analytics](https://ga-beacon.appspot.com/UA-65622529-1/AoG-Monitor/)](https://github.com/igrigorik/ga-beacon)
