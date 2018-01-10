@@ -29,7 +29,7 @@ function printIssues($repo, $client) {
   foreach ($issues as $key => $issue) {
     $tmpDate = substr($issue['created_at'], 0, 10);
     if (strtotime($tmpDate) > $twoDaysAgoTime) {
-      $output .= $i . ") [" . $tmpDate . "] " . ($issue['title'] . " - " . $issue['url'] .  "\n");
+      $output .= $i . ") [" . $tmpDate . "] " . ($issue['title'] . " - " . $issue['html_url'] .  "\n");
       $i++;
     }
   }
